@@ -1,0 +1,30 @@
+{
+  "name": "hiddenwisdom-react-js",
+  "description": "hidden wisdom front end proj.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lagos-devs/hiddenwisdom-react-js.git"
+  },
+  "scripts": {
+    "start": "node",
+    "prod": "NODE_ENV=production node server.js",
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "flux": "^2.0.1",
+    "jquery": "^2.1.4",
+    "lodash": "^4.13.1",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.3",
+    "react-router": "^1.0.0-rc3",
+    "webpack": "^1.12.2"
+  },
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/lagos-devs/hiddenwisdom-react-js/issues"
+  },
+  "homepage": "https://github.com/lagos-devs/hiddenwisdom-react-js#readme"
+}
