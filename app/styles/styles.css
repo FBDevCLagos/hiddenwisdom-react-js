@@ -1,0 +1,88 @@
+html {
+  height: 100%;
+}
+
+html body {
+  margin: 0;
+  height: inherit;
+}
+
+html body > div {
+  height: inherit;
+}
+
+
+/* Parent container for page*/
+
+.root {
+  height: inherit;
+  display: flex;
+  flex-direction: column
+}
+
+.root .header {
+  height: 70px;
+  background-color: #88B7E1;
+  text-align: center;
+}
+
+.root .container {
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+}
+
+.container .content {
+  width: 80%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+
+/*Header*/
+
+
+/* Sidenav*/
+.container .sidenav {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.sidenav > div {
+  padding: 10px;
+}
+
+.sidenav .logo {
+  height: 200px;
+  text-align: center;
+}
+
+.sidenav .logo > span {
+  vertical-align: middle;
+  line-height: 200px;
+}
+
+.sidenav .menu {
+  background-color: #F7FAFB;
+  height: 600px;
+}
+
+.sidenav > .menu > ul {
+  list-style: none;
+}
+
+.sidenav > .menu > ul > li {
+  padding: 5px;
+}
+
+/*Content area*/
+/*Home*/
+.content .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
