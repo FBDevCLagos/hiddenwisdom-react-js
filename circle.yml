@@ -1,0 +1,10 @@
+dependencies:
+  pre:
+    - bower install
+  post:
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: hiddenwisdom
