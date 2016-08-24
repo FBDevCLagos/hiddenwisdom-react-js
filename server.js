@@ -9,7 +9,6 @@
 const express = require('express');
 const webpack = require('webpack');
 const config = require('./webpack.development.config');
-const open = require('open');
 
 /* eslint-disable no-console */
 
@@ -36,7 +35,6 @@ app.listen(port, '0.0.0.0', function onStart(err) {
   if (err) {
     console.log(err);
   } else {
-    open(`http://localhost:${port}`);
-    console.info('==> <img draggable="false" class="emoji" alt="🌎" src="https://s.w.org/images/core/emoji/72x72/1f30e.png"> Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
+    console.info('==> <img draggable="false" class="emoji" alt="🌎" src="https://s.w.org/images/core/emoji/72x72/1f30e.png"> Listening on port %s. Open up http://127.0.0.0:%s/ in your browser.', port, port);
   }
 });
