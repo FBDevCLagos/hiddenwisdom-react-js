@@ -14,14 +14,6 @@
   margin: 0;
 }
 
-@include tablet {
-  .navbar-right {
-    float: right!important;
-  }
-}
-
-@include desktop {
-  .navbar-right {
-    float: right!important;
-  }
+.navbar-right {
+  float: right!important;
 }

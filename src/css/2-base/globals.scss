@@ -72,4 +72,11 @@ a {
   margin-left: 230px;
   min-height: 100%;
   padding: 10px;
+
+  @include phablet {
+    margin-left: 0;
+  }
+  @include mobile {
+    margin-left: 0;
+  }
 }

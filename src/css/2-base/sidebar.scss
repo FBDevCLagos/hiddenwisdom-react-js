@@ -14,10 +14,17 @@
   }
   .left-sidebar {
      background-color: #f5f5f5;
-     width: 230px;
      left: 0;
+     width: 230px;
      position: absolute;
      border-right: 1px solid #e3e3e3;
+
+     @include phablet {
+       display: none;
+     }
+     @include mobile {
+       display: none;
+     }
   }
 
   .sidebar-content {
