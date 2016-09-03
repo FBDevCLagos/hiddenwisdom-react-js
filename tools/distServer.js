@@ -1,4 +1,5 @@
-/* use strict */
+"use strict"
+
 let express = require('express');
 let path = require('path');
 let compression = require('compression');
