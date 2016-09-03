@@ -6,9 +6,9 @@ const Header = () => {
       <nav className="navbar navbar-default navbar-fixed-top top-header">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a href="index.html" className="navbar-brand">
+            <Link to="/" className="navbar-brand">
               hidden wisdom
-            </a>
+            </Link>
           </div>
           <div className="be-right-navbar">
             <ul className="nav navbar-nav navbar-right be-user-nav">
