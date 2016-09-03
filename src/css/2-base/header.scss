@@ -1,0 +1,27 @@
+.top-header {
+  background-color: $white;
+  border: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid darken($site-bg, 5%);
+  max-height: $max-header-height;
+}
+.top-header .container-fluid {
+  padding: 0;
+}
+.top-header .navbar-header .navbar-brand {
+  line-height: 60px;
+  padding: 0 20px;
+  margin: 0;
+}
+
+@include tablet {
+  .navbar-right {
+    float: right!important;
+  }
+}
+
+@include desktop {
+  .navbar-right {
+    float: right!important;
+  }
+}

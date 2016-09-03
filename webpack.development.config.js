@@ -1,37 +1,68 @@
 const webpack = require('webpack');
 const path = require('path');
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const buildPath = path.resolve(__dirname, 'dist');
+const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
 
 module.exports = {
   debug: true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '#inline-source-map',
   noInfo: false,
   entry: [
-    'eventsource-polyfill', //important for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
-    './app/js/index.js'
+    'eventsource-polyfill',
+    'webpack-hot-middleware/client?reload=true',
+    entryPath
   ],
-  target: 'web', // bundle app the way web browsers can understand
+  target: 'web',
   output: {
-    path: __dirname + '/app', // Note: Physical files are only output by the production build task `npm run build`
+    path: buildPath,
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './app'
+    contentBase: './src'
   },
   module: {
     loaders: [
-      { test: /\.js$/, include: path.join(__dirname, 'app'), loaders: ['babel'] },
-      { test: /(\.css)$/, loaders: ['style', 'css'] },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-      { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
+      {
+        test: /src\/js\/.+.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      },
+      // SASS
+      {
+        test: /css\/.+.(scss|css)$/,
+        loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url?limit=25000'
+      },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file'
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=image/svg+xml'
+      }
     ]
   },
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
 };
-
