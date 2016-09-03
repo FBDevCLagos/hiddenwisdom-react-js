@@ -16,7 +16,7 @@ const Translations = ({translations}) => {
  }
 
  Translations.propTypes = {
-    translations: PropTypes.object
+    translations: PropTypes.array
  }
 
  export default Translations;

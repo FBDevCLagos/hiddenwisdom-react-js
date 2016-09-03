@@ -1,6 +1,6 @@
 const express = require('express');
 const webpack = require('webpack');
-const config = require('../webpack.development.config');
+const config = require('../webpack.config.dev');
 const path = require('path');
 
 /* eslint-disable no-console */
