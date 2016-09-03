@@ -13,11 +13,15 @@ const ProverbCard = ({proverb}) => {
            translations={proverb.translations} />
 
          <div className="card-footer">
+
            <div className="tags">
              {proverb.tags && proverb.tags.map(tag => {
-               return <span className="chip">{tag}</span>
+               return (<span key={tag} className="chip">
+                        {tag}
+                      </span>)
              })}
            </div>
+
            <div className="fav-buttons">
             <span className="chip">
               <i className="fa fa-heart"
