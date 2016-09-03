@@ -24,6 +24,6 @@ describe('Header Component', () => {
   });
 
   it('should contain a link to add new proverb', () => {
-    expect(wrapper.find('Link').text()).toContain('Add a new proverb');
+    expect(wrapper.find('a.btn').text()).toContain('new proverb');
   });
 });

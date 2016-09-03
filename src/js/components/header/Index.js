@@ -11,14 +11,12 @@ const Header = () => {
             </Link>
           </div>
           <div className="be-right-navbar">
-            <ul className="nav navbar-nav navbar-right be-user-nav">
+            <ul className="nav navbar-nav navbar-right user-nav">
               <li className="dropdown">
                 <Link to="/proverbs/new"
                   role="button"
                   className="btn btn-primary">
-                  <span className="user-name">
-                    Add a new proverb
-                  </span>
+                  Add a new proverb
                 </Link>
               </li>
             </ul>
