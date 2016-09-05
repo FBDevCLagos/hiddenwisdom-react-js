@@ -4,6 +4,9 @@ machine:
 
 dependencies:
   pre:
+    - npm install istanbul -g
+    - npm install -g babel-cli
+    - npm install mocha -g
   post:
 
 deployment:
@@ -11,3 +14,14 @@ deployment:
     branch: master
     heroku:
       appname: hiddenwisdom
+
+test:
+  override:
+    - npm run test:coverage
+
+  post:
+    - npm run coveralls
+
+general:
+  artifacts:
+    - ./coverage
