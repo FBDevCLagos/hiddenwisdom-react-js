@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react'; // eslint-disable-line no-unused-vars
 import {mount, shallow} from 'enzyme'; // eslint-disable-line no-unused-vars
-import Index from './Index';
+import About from './index';
 
 /**
 * @return {Func} A shallow dom for tests
@@ -9,10 +9,10 @@ import Index from './Index';
 function setup(status) {
   let props = {
   };
-  return shallow(<Index {...props} />);
+  return shallow(<About {...props} />);
 }
 
-describe('<Index />', () => {
+describe('<About />', () => {
   it('renders the About Index component', () => {
     const wrapper = setup();
 

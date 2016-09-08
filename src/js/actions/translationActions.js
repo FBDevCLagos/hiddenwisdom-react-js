@@ -8,7 +8,7 @@ import mockTranslationApi from '../api/mockTranslationsApi';
 * @return {Object} containing the action type and data
 */
 export function loadTranslationsSuccess(itemId, translations) {
-  return {type: types.LOAD_TRANSLATIONS_SUCCESS, itemId, translations};
+  return { type: types.LOAD_TRANSLATIONS_SUCCESS, itemId, translations };
 }
 
 /**
@@ -16,7 +16,7 @@ export function loadTranslationsSuccess(itemId, translations) {
 * @return {Object} containing the action type and translation
 */
 export function updateTranslationSuccess(itemId, translation) {
-  return {type: types.UPDATE_TRANSLATION_SUCCESS, itemId, translation};
+  return { type: types.UPDATE_TRANSLATION_SUCCESS, itemId, translation };
 }
 
 export function loadTranslations() {
