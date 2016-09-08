@@ -23,6 +23,8 @@
   },
   "license": "ISC",
   "dependencies": {
+    "babel": "^5.8.38",
+    "babel-cli": "^6.14.0",
     "bootstrap": "4.0.0-alpha.3",
     "compression": "^1.6.2",
     "express": "^4.14.0",
@@ -46,7 +48,7 @@
     "webpack": "^1.12.2"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel": "^6.5.2",
     "babel-cli": "6.14.0",
     "babel-core": "^6.13.0",
     "babel-eslint": "^4.1.6",
