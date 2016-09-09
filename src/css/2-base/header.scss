@@ -7,18 +7,18 @@
 }
 
 .navbar {
-  padding: 0px;
+  padding: 0;
 
   .navbar-brand {
     padding: 15px;
   }
 
   .nav-item {
-    padding: 19px 15px 18px;
     border-bottom: 1px solid transparent;
+    padding: 19px 15px 18px;
 
     .nav-link {
-      padding: 0px;
+      padding: 0;
 
       i {
         margin-right: 5px;
@@ -28,11 +28,5 @@
     &:hover {
       border-bottom: 1px solid #0275d8;
     }
-  }  
+  }
 }
-
-
-
-
-
-
