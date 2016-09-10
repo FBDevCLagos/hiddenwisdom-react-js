@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../../../actions/proverbActions';
-import ListPage from './listPage';
+import ListPage from './ListPage';
 
 export class Proverbs extends Component {
   constructor(props) {

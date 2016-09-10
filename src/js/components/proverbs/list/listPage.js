@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
-import ProverbCards from '../../common/cards/proverbs/proverbCards';
+import ProverbCards from '../../common/cards/proverbs/ProverbCards';
 
 const ListPage = ({ proverbs }) => {
    return (

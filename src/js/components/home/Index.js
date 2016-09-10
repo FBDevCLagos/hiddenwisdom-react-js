@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import Proverbs from '../proverbs/list';
+import Proverbs from '../proverbs/List';
 
 class HomePage extends Component {
   render() {
