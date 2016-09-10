@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import Header from '../components/header/Index';
-import SideNav from '../components/sidebar/Index';
-
+import Header from '../components/header';
+import SideNav from '../components/sidebar';
 
 class App extends Component {
   render() {
@@ -21,6 +20,6 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.object.isRequired
-}
+};
 
 export default App;

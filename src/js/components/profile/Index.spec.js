@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react'; // eslint-disable-line no-unused-vars
-import {mount, shallow} from 'enzyme'; // eslint-disable-line no-unused-vars
-import Index from './Index';
+import { mount, shallow } from 'enzyme'; // eslint-disable-line no-unused-vars
+import Profile from '.index';
 
 /**
 * @return {Func} A shallow dom for tests
@@ -9,10 +9,10 @@ import Index from './Index';
 function setup(status) {
   let props = {
   };
-  return shallow(<Index {...props} />);
+  return shallow(<Profile {...props} />);
 }
 
-describe('<Index />', () => {
+describe('<Profile />', () => {
   it('renders the Profile Index component', () => {
     const wrapper = setup();
 

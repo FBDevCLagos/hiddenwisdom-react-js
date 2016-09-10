@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
 
-const About = () => {
-  return (
+const Proverb = () => {
+   return (
     <div className="panel-container about-page">
-      <h3>About hidden wisdom</h3>
+      <h3>Create a new proverb</h3>
     </div>
-  )
-}
+   )
+ }
 
-export default About;
+ Proverb.propTypes = {
+ }
+
+ export default Proverb;

@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import {mount, shallow} from 'enzyme';
-import Sidebar from './Index';
+import Sidebar from './index';
 
 const setup = () => {
   return shallow(<Sidebar />)

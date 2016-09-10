@@ -1,22 +1,18 @@
-import React, {PropTypes} from 'react'; // eslint-disable-line no-unused-vars
+import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
 import ProverbCard from './ProverbCard';
 
-const ProverbCards = ({proverbs}) => {
-  let proverbsArr = []
-  for(let key in proverbs) {
-    proverbsArr.push(
-      <ProverbCard key={key} proverb={proverbs[key]} />
-    )
-  }
-   return (
-     <div>
-       {proverbsArr}
-     </div>
-   )
+const ProverbCards = ({ proverbs }) => {
+  return (
+    <div>
+      {Object.keys(proverbs).map(key => {
+        return <ProverbCard key={key} proverb={proverbs[key]} />
+      })}
+    </div>
+  )
  }
 
- ProverbCards.propTypes = {
-    proverbs: PropTypes.object
- }
+ProverbCards.propTypes = {
+  proverbs: PropTypes.object
+};
 
- export default ProverbCards;
+export default ProverbCards;

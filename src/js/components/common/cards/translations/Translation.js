@@ -1,24 +1,24 @@
-import React, {PropTypes} from 'react'; // eslint-disable-line no-unused-vars
-import {getLanguage} from '../../../../utils/translationLanguages';
+import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
+import { getLanguage } from '../../../../utils/translationLanguages';
 
-const Translation = ({translation}) => {
-   return (
-     <div className="card-block">
-       <blockquote className="card-blockquote">
-         <p>{translation.body}</p>
-         <footer>
+const Translation = ({ translation }) => {
+  return (
+    <div className="card-block">
+      <blockquote className="card-blockquote">
+        <p>{translation.body}</p>
+        <footer>
           In: &nbsp;
           <cite title="lang">
             {getLanguage(translation.language)}
           </cite>
-         </footer>
-       </blockquote>
-     </div>
-   )
- }
+        </footer>
+      </blockquote>
+    </div>
+  )
+}
 
- Translation.propTypes = {
-    translation: PropTypes.object
- }
+Translation.propTypes = {
+  translation: PropTypes.object
+}
 
- export default Translation;
+export default Translation;
