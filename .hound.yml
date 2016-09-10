@@ -1,0 +1,12 @@
+jshint:
+  enabled: false
+  config_file: .jshintrc
+
+eslint:
+  enabled: true
+  config_file: .eslintrc
+
+scss:
+  config_file: .scss-lint.yml
+
+fail_on_violations: true

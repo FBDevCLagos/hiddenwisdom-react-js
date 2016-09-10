@@ -1,0 +1,32 @@
+.top-header {
+  background-color: $white;
+  border: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid darken($site-bg, 5%);
+  max-height: $max-header-height;
+}
+
+.navbar {
+  padding: 0;
+
+  .navbar-brand {
+    padding: 15px;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid transparent;
+    padding: 19px 15px 18px;
+
+    .nav-link {
+      padding: 0;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    &:hover {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+}
