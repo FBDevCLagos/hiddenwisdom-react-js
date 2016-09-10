@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
 import IndexPage from './IndexPage';
+import * as actions from '../../actions/loginActions';
 
-import * as actions from '../../actions/loginActions'
 class Login extends React.Component {
   constructor(props, context) {
     super(props);

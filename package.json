@@ -12,7 +12,7 @@
     "open:src": "babel-node tools/srcServer.js",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
-    "test:coverage": "rimraf coverage/ && istanbul cover _mocha src/tools/testSetup.js \"src/**/*.spec.js\"",
+    "test:coverage": "rimraf coverage/ && istanbul cover _mocha tools/testSetup.js \"src/**/*.spec.js\"",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",

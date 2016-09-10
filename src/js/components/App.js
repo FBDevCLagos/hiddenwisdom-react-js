@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import Header from '../components/header';
-import SideNav from '../components/sidebar';
+import Header from '../components/header/Indexnpm run ';
+import SideNav from '../components/sidebar/Index';
 
 class App extends Component {
   render() {
