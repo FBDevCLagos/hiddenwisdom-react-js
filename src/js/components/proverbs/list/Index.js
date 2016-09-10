@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as actions from '../../../actions/proverbActions';
+import * as actions from '../../../actions/pgitroverbActions';
 import ListPage from './ListPage';
 
 export class Proverbs extends Component {
