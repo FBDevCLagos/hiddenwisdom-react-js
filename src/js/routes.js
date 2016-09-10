@@ -1,14 +1,14 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import { Router, Route, IndexRoute } from 'react-router';
 import App from './components/App';
-import HomePage from './components/home';
-import AboutPage from './components/about';
-import ProfilePage from './components/profile';
-import Proverbs from './components/proverbs/list';
-import Proverb from './components/proverbs/proverb';
-import LoginPage from './components/login/Index';		
-import FacebookLogin from './components/login/Facebook';		
-import PhoneLogin from './components/login/PhoneNumber';		
+import HomePage from './components/home/Index';
+import AboutPage from './components/about/Index';
+import ProfilePage from './components/profile/Index';
+import Proverbs from './components/proverbs/list/Index';
+import Proverb from './components/proverbs/proverb/Index';
+import LoginPage from './components/login/Index';
+import FacebookLogin from './components/login/Facebook';
+import PhoneLogin from './components/login/PhoneNumber';
 import EmailLogin from './components/login/Email';
 
 export default (
@@ -25,7 +25,7 @@ export default (
 
       <Route path="proverbs/new" component={Proverb} />
       <Route path="proverbs/:proverbId" component={Proverb} />
-      
+
       <Route path="about" component={AboutPage} />
       <Route path="profile" component={ProfilePage} />
     </Route>
