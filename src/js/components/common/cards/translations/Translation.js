@@ -9,7 +9,7 @@ const Translation = ({ translation }) => {
         <footer>
           In: &nbsp;
           <cite title="lang">
-            {getLanguage(translation.language)}
+            {translation.language}
           </cite>
         </footer>
       </blockquote>

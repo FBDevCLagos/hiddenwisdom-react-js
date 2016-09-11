@@ -18,7 +18,8 @@
      width: 230px;
      position: absolute;
      border-right: 1px solid #e3e3e3;
-
+     opacity: 0.9;
+     
      @include phablet {
        display: none;
      }

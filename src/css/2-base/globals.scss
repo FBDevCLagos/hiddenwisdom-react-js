@@ -9,6 +9,10 @@ body {
     color: $body-text;
     font-family: $roboto;
     font-size: $base-font-size;
+    // background-image: url('../img/zambezi_river.jpg');
+    background-image: url('../img/elephants.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .wrapper {
@@ -72,6 +76,7 @@ a {
   margin-left: 230px;
   min-height: 100%;
   padding: 10px;
+  background: rgba(0,0,0,0.2);
 
   @include phablet {
     margin-left: 0;

@@ -28,9 +28,9 @@ export function updateProverbSuccess(proverb) {
 
 export function loadProverbs() {
   return dispatch => {
-    return mockProverbApi.getAllProverbs()
-      .then(proverbs => {
-        dispatch(loadProverbsSuccess(proverbs));
+    return webAPI(`/proverbs`, 'GET', '')
+      .then(res => {
+        dispatch(loadProverbsSuccess(res.proverbs));
       });
   };
 }
