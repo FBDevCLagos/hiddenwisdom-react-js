@@ -2,12 +2,14 @@ import React, {PropTypes} from 'react'; // eslint-disable-line no-unused-vars
 
 const About = () => {
    return (
-    <div className="panel-container about-page">
+    <div className="panel-container">
       <h3>About hidden wisdom</h3>
       <hr />
+
+      <div className="about-page">
       	<div className="content">
 	      <blockquote className="blockquote">
-	      	Life can only be understood backwards; but it must be lived forwards. - Søren Kierkegaard
+	      	Life can only be understood backwards; but it must be lived forwards. <span className="author">Søren Kierkegaard</span>
 	      </blockquote>
 	      <p>
 	      	Sometimes it is necessary that we understand where we are coming from, in order to better plan where we hope to be in the future.
@@ -16,7 +18,7 @@ const About = () => {
 	      </p>
 
 	      <blockquote className="blockquote">
-	      	Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present - Bil Keane
+	      	Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present. <span className="author">Bil Keane</span>
 	      </blockquote>
 	      <p>
 	      	When brillant minds meet, one can only imagine what the result would be. Such was the case in the past, when our ancestors controlled the affiars of their environment. They pondered on and about nature, conversed with her mother, churrnned out beatifule pieces of wisdom, in writing, but more in words.
@@ -27,6 +29,7 @@ const About = () => {
 		  	Hidden Wisdom is courtesy of --Fill in your names here--
 		  </p>
 		</div>
+      </div>
     </div>
    )
  }
