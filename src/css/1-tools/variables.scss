@@ -6,6 +6,7 @@ $font-url: "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300
 $roboto: "Roboto", "Lato", sans-serif;
 $base-font-size: 14px;
 $proverb-font-size: 24px;
+$line-height: 1.4;
 
 // colors
 $primary-color: #0275d8;
@@ -16,6 +17,8 @@ $lines: #EEEEEE;
 $site-bg: #EEEEEE;
 $white: #FFFFFF;
 $gray1: #CCCCCC;
+$selection: #b3d4fc;
+$main-content-bg: rgba(0, 0, 0, 0.2);
 
 // responsiveness
 $mobile-width: 500px;
