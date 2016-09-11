@@ -1,0 +1,79 @@
+.sidebar {
+  height: 100%;
+  margin-top: 61px;
+  padding-bottom: 61px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  .sidebar-wrapper {
+    display: table;
+    height: 100%;
+    table-layout: fixed;
+    width: 100%;
+  }
+  .left-sidebar {
+    background-color: $sidebar-bg-color;
+    border-right: 1px solid $lines;
+    left: 0;
+    opacity: 0.9;
+    position: absolute;
+    width: 230px;
+
+    @include phablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .sidebar-content {
+    bottom: 0;
+    left: 0;
+    padding-top: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .sidebar-elements {
+    margin: 0;
+    padding: 0;
+
+    > li {
+      list-style: none;
+
+      > a {
+        display: block;
+        color: $body-text;
+        font-size: 14px;
+        line-height: 38px;
+        overflow: hidden;
+        padding: 0 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .active {
+        color: $primary-color;
+        font-size: 120%;
+        font-weight: 400;
+        padding-left: 20px;
+      }
+
+      .fa {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .divider {
+    color: $primary-color;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 20px 20px 0;
+    text-transform: uppercase;
+  }
+}
