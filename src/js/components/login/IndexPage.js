@@ -7,27 +7,26 @@ const IndexPage = ({
   onFBLogin,
   children
 }) => {
-   return (
-     <div className="login-box">
-       <div id="loginbox"
-       className="main-box">
-       {children ?
-         <div>{children}</div> :
-           <LoginPanel
-             onPhoneNumberLogin={onPhoneNumberLogin}
-             onEmailLogin={onEmailLogin}
-             onFBLogin={onFBLogin} />
-         }
+  return (
+    <div className="login-box">
+      <div id="loginbox" className="main-box">
+        {children ?
+          <div>{children}</div> :
+          <LoginPanel
+          onPhoneNumberLogin={onPhoneNumberLogin}
+          onEmailLogin={onEmailLogin}
+          onFBLogin={onFBLogin} />
+        }
+      </div>
+    </div>
+  )
+}
 
-       </div>
-     </div>
-   )
- }
+IndexPage.propTypes = {
+  onPhoneNumberLogin: PropTypes.func,
+  onEmailLogin: PropTypes.func,
+  onFBLogin: PropTypes.func,
+  children: PropTypes.object
+}
 
- IndexPage.propTypes = {
-    onPhoneNumberLogin: PropTypes.func,
-    onEmailLogin: PropTypes.func,
-    onFBLogin: PropTypes.func
- }
-
- export default IndexPage;
+export default IndexPage;
