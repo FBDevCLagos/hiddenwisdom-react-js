@@ -37,7 +37,9 @@ Sweet! First, sync your fork with the upstream repo
 
     git fetch upstream
 
+
 Next:
+
 1. Checkout to the `develop` branch: `git checkout develop`
 2. Pull from `develop` in origin: `git pull origin develop`
 3. Checkout to a branch named in the following format:
