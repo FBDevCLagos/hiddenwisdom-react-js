@@ -6,7 +6,7 @@ import Translation from './Translation';
 let translation = {
   id: 1,
   body: 'the body',
-  language: 'ig'
+  language: 'igbo'
 }
 
 /**
