@@ -37,7 +37,7 @@ img {
 
 hr {
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $gray1;
   display: block;
   height: 1px;
   margin: 1em 0;
@@ -74,7 +74,6 @@ a {
   min-height: 100%;
   padding: 10px;
   position: relative;
-
   @include phablet {
     margin-left: 0;
   }
