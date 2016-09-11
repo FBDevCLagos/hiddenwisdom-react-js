@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
-import {mount, shallow} from 'enzyme';
-import Header from './index';
+import { mount, shallow } from 'enzyme';
+import Header from './Index';
 
 const setup = () => {
   return mount(<Header />)
@@ -20,10 +20,7 @@ describe('Header Component', () => {
 
 
   it('should display site name', () => {
-    expect(wrapper.find('.navbar-brand').text()).toEqual('hidden wisdom');
+    expect(wrapper.find('.navbar-brand').text()).toEqual('Hidden Wisdom');
   });
 
-  it('should contain a link to add new proverb', () => {
-    expect(wrapper.find('a.btn').text()).toContain('new proverb');
-  });
 });

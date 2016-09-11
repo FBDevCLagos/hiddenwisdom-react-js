@@ -7,7 +7,7 @@ import mockProverbApi from '../api/mockProverbsApi';
 * @return {Object} containing the action type and data
 */
 export function loadProverbsSuccess(proverbs) {
-  return {type: types.LOAD_PROVERBS_SUCCESS, proverbs};
+  return { type: types.LOAD_PROVERBS_SUCCESS, proverbs };
 }
 
 /**
@@ -15,7 +15,7 @@ export function loadProverbsSuccess(proverbs) {
 * @return {Object} containing the action type and data
 */
 export function loadProverbSuccess(proverb) {
-  return {type: types.LOAD_PROVERB_SUCCESS, proverb};
+  return { type: types.LOAD_PROVERB_SUCCESS, proverb };
 }
 
 /**
@@ -23,7 +23,7 @@ export function loadProverbSuccess(proverb) {
 * @return {Object} containing the action type and proverb
 */
 export function updateProverbSuccess(proverb) {
-  return {type: types.UPDATE_PROVERB_SUCCESS, proverb};
+  return { type: types.UPDATE_PROVERB_SUCCESS, proverb };
 }
 
 export function loadProverbs() {

@@ -9,8 +9,8 @@ import ProverbCards from './ProverbCards';
 function setup(status) {
   let props = {
     proverbs: {
-      1: {id: 1},
-      2: {id: 2}
+      1: { id: 1 },
+      2: { id: 2 }
     }
   };
   return shallow(<ProverbCards {...props} />);

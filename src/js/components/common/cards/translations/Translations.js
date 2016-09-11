@@ -1,22 +1,18 @@
-import React, {PropTypes} from 'react'; // eslint-disable-line no-unused-vars
+import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
 import Translation from './Translation';
 
-const Translations = ({translations}) => {
-  let translationsArr = [];
-  for (let key in translations) {
-    translationsArr.push(
-      <Translation key={key} translation={translations[key]} />
-    )
-  }
+const Translations = ({ translations }) => {
    return (
-    <div>
-      {translationsArr}
+    <div className="c-translations">
+      {Object.keys(translations).map(key => {
+        return <Translation key={key} translation={translations[key]} />
+      })}
     </div>
    )
  }
 
  Translations.propTypes = {
-    translations: PropTypes.array
+  translations: PropTypes.array
  }
 
  export default Translations;

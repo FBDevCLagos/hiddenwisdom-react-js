@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react'; // eslint-disable-line no-unused-vars
 import {mount, shallow} from 'enzyme'; // eslint-disable-line no-unused-vars
-import IndexPage from './IndexPage';
+import ListPage from './ListPage';
 
 /**
 * @return {Func} A shallow dom for tests
@@ -9,14 +9,14 @@ import IndexPage from './IndexPage';
 function setup(status) {
   let props = {
     proverbs: {
-      1: {id: 1},
-      2: {id: 2}
+      1: { id: 1 },
+      2: { id: 2 }
     }
   };
-  return shallow(<IndexPage {...props} />);
+  return shallow(<ListPage {...props} />);
 }
 
-describe('<IndexPage />', () => {
+describe('<ListPage />', () => {
   let wrapper;
 
   beforeEach(() => {

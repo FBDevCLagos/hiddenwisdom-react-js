@@ -1,26 +1,23 @@
 import expect from 'expect';
 import React from 'react'; // eslint-disable-line no-unused-vars
 import {mount, shallow} from 'enzyme'; // eslint-disable-line no-unused-vars
-import {Index} from './Index';
+import App from './App';
 
 /**
 * @return {Func} A shallow dom for tests
 */
 function setup(status) {
   let props = {
-    proverbs: {
-      1: {id: 1},
-      2: {id: 2}
-    }
+    children: <div />
   };
-  return shallow(<Index {...props} />);
+  return shallow(<App {...props} />);
 }
 
-describe('<Index />', () => {
-  it('renders the Index component', () => {
+describe('<App />', () => {
+  it('renders the App component', () => {
     const wrapper = setup();
 
     // assertions
-    expect(wrapper.find('IndexPage').length).toEqual(1);
+    expect(wrapper.find('.wrapper').length).toEqual(1);
   });
 });

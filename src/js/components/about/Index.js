@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'; // eslint-disable-line no-unused-vars
+import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
 
 const About = () => {
    return (
@@ -37,4 +37,4 @@ const About = () => {
  About.propTypes = {
  }
 
- export default About;
+export default About;
