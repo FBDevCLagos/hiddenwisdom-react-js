@@ -10,8 +10,10 @@
   .card-block {
     border-bottom: 1px solid darken($site-bg, 10%);
     .card-blockquote {
+      background: transparent;
       > p {
         font-size: $proverb-font-size;
+        font-style: normal;
       }
     }
   }

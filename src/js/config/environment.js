@@ -1,9 +1,9 @@
 let host;
 
 if (process.ENV === 'production') {
-  host = "//hidden-wisdom-api.herokuapp.com"
+  host = "//hiddenwisdom-api.herokuapp.com/api/v1"
 } else {
-  host = "//hidden-wisdom-api-test.herokuapp.com"
+  host = "//hiddenwisdom-api.herokuapp.com/api/v1"
 }
 
 module.exports = {
