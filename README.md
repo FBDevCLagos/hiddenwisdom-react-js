@@ -6,8 +6,6 @@
 
 This is the Frontend React based app for hidden wisdom
 
-More desc to come here
-
 
 ## Contribute
 
