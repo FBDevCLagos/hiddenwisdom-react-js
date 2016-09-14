@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux'
 import { saveProverb, loadProverbs } from '../../../actions/proverbActions';
+import { languages } from '../../../utils/translationLanguages';
 import { isEmpty } from 'underscore';
 import ProverbForm from './ProverbForm';
 
@@ -40,13 +41,14 @@ class Proverb extends Component {
     const { proverb, errors, loading } = this.state;
     return (
       <div className="panel-container about-page">
-        <h3>Create a new proverb</h3>
+        <h3>{`${this.props.params.proverbId ? "Edit" : "Create"} a proverb`}</h3>
         <ProverbForm
           proverb={proverb}
           loading={loading}
           errors={errors}
           handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit} />
+          handleSubmit={this.handleSubmit} 
+          allLanguages={Object.values(languages)}/>
       </div>
     )    
   }
@@ -59,7 +61,8 @@ Proverb.contextTypes = {
 Proverb.propTypes = {
   proverb     : PropTypes.object,
   loadProverbs: PropTypes.func,
-  saveProverb : PropTypes.func
+  saveProverb : PropTypes.func,
+  params      : PropTypes.object
 };
 
 const getProverbValues = (proverbId, proverbs) => {

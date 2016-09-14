@@ -37,7 +37,7 @@ class SelectInput extends Component {
     this.handleOnChange= this.handleOnChange.bind(this);
   }
 
-  componentDidMount () {
+  componentWillMount () {
     const { options } = this.props;
     let multiValue = formatSelectedOptions(options);
     this.setState({ multiValue });     

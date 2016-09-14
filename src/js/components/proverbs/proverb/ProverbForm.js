@@ -4,7 +4,7 @@ import SelectInput from '../../common/select/Index.js';
 import TextArea from '../../common/textarea/Index'
 
 let ProverbForm = props => {
-  const { proverb, handleChange, errors, handleSubmit, loading } = props;
+  const { proverb, handleChange, errors, handleSubmit, loading, allLanguages } = props;
   return (
     <div className="proverb-form">
       <form>
@@ -25,6 +25,14 @@ let ProverbForm = props => {
           error={errors.translation} />
 
         <SelectInput
+          name="language"
+          label="Translation Language"
+          options={allLanguages}
+          onChange={handleChange}
+          multi={false}
+          error={errors.language} />          
+
+        <SelectInput
           name="tags"
           label="Tags"
           hint="Enter a value that's NOT in the list, then hit enter"
@@ -40,12 +48,22 @@ let ProverbForm = props => {
           onChange={handleChange}
           error={errors.length} />           
 
-        <input
-          type="submit"
-          disabled={loading}
-          value={loading ? 'Saving...' : 'Save'}
-          className="btn btn-primary"
-          onClick={handleSubmit} />                            
+        <div className="row form-group proverb-form-control">
+          <div className="pull-xs-left">
+            <input
+              type="submit"
+              disabled={loading}
+              value={loading ? 'Saving...' : 'Save'}
+              className="btn btn-primary"
+              onClick={handleSubmit} />           
+          </div>
+          <div className="pull-xs-right">
+            <button
+              className="btn btn-primary">
+              Add Translation
+            </button>           
+          </div>          
+        </div>                          
       </form>
     </div>
   );
@@ -56,7 +74,8 @@ ProverbForm.propTypes = {
   proverb     : PropTypes.object.isRequired,
   errors      : PropTypes.object.isRequired,
   handleChange: PropTypes.func,
-  handleSubmit: PropTypes.func
+  handleSubmit: PropTypes.func,
+  allLanguages: PropTypes.array
 };
 
 export default ProverbForm;
