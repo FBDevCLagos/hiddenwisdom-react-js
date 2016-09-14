@@ -39,6 +39,7 @@
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
+    "react-select": "^1.0.0-rc.1",
     "react-static-container": "^1.0.1",
     "react-tinymce": "^0.5.1",
     "redux": "3.5.2",
@@ -46,6 +47,7 @@
     "sinon": "^1.17.4",
     "toastr": "2.1.2",
     "twitter-bootstrap-wizard": "^1.2.0",
+    "underscore": "^1.8.3",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2"
   },

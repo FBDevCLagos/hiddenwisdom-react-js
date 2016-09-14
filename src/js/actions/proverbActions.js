@@ -26,6 +26,13 @@ export function updateProverbSuccess(proverb) {
   return { type: types.UPDATE_PROVERB_SUCCESS, proverb };
 }
 
+export function createProverbSuccess(proverb) {
+  return { 
+    type: types.CREATE_PROVERB_SUCCESS, 
+    proverb
+  };
+}
+
 export function loadProverbs() {
   return dispatch => {
     return webAPI(`/proverbs`, 'GET', '')
@@ -41,5 +48,16 @@ export function loadProverb(proverbId) {
       .then(proverb => {
         dispatch(loadProverbSuccess(proverb));
       });
+  };
+}
+
+export function saveProverb(proverb) {
+  return (dispatch) => {
+    return mockProverbApi.saveProverb(proverb).then(proverb => {
+      proverb.id ? dispatch(updateProverbSuccess(proverb))
+      : dispatch(createProverbSuccess(proverb));
+    }).catch(error => {
+      throw error;
+    });
   };
 }

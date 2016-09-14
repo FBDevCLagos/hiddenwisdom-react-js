@@ -1,6 +1,6 @@
 import delay from './delay';
-import {proverbs} from './data/proverbs';
-import {translations} from './data/translations';
+import { proverbs } from './data/proverbs';
+import { translations } from './data/translations';
 
 /* eslint-disable camelcase */
 
@@ -13,9 +13,9 @@ function replaceAll(str, find, replace) {
 }
 
 export function proverbWithTranslation(proverbId) {
-  let proverbArr = proverbs.filter(proverb => proverb.id === proverbId);
-  let translationsArr = translations.filter(job => job.proverb_id === proverbId);
-  return Object.assign({}, proverbArr[0], {translations: translationsArr});
+  const proverb = Object.values(proverbs).filter(proverb => proverb.id.toString() === proverbId)[0];
+  const proverbTranslations = translations.filter(translation => translation.proverb_id.toString() === proverbId);
+  return { proverb, translations: proverbTranslations };
 }
 
 // This would be performed on the server in a real app. Just stubbing in.
