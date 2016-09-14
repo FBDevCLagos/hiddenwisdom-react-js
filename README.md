@@ -4,4 +4,11 @@
 
 # Hidden Wisdom React
 
-hidden wisdom front end  proj.
+This is the Frontend React based app for hidden wisdom
+
+
+## Contribute
+
+New and exiting contributors are welcome!
+
+Please read through the [CONTRIBUTING GUIDE](https://github.com/lagos-devs/hiddenwisdom-react-js/blob/develop/CONTRIBUTING.md) before picking up/raising an issue. It's quite short :)

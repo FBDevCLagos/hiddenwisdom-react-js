@@ -8,26 +8,26 @@ const Sidebar = () => {
         <div className="left-sidebar-content">
           <ul className="sidebar-elements">
             <li className="divider">Menu</li>
-            <li className="active">
-              <Link to="/">
+            <li>
+              <Link to="/proverbs" activeClassName="active">
                 <i className="fa fa-comments"></i>
                 <span>Proverbs</span>
               </Link>
             </li>
             <li className="parent">
-              <Link to="/favorites">
+              <Link to="/favorites" activeClassName="active">
                 <i className="fa fa-heartbeat"></i>
                 <span>My favorites</span>
               </Link>
             </li>
             <li className="parent">
-              <Link to="/profile">
+              <Link to="/profile" activeClassName="active">
                 <i className="fa fa-user"></i>
                 <span>Profile</span>
               </Link>
             </li>
             <li className="parent">
-              <Link to="/about">
+              <Link to="/about" activeClassName="active">
                 <i className="fa fa-info-circle"></i>
                 <span>About</span>
               </Link>

@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import Header from '../components/header/Indexnpm run ';
+import Header from '../components/header/Index';
 import SideNav from '../components/sidebar/Index';
 
 class App extends Component {
