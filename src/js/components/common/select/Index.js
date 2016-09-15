@@ -18,18 +18,22 @@ const formatSelectedOptions = options => options.map(
 );
 
 const getValues = values => {
-  return isArray(values) ? pluck(values, 'value') : [ values.value ];
+  return isArray(values) ? pluck(values, 'value') : [ values.value || '' ];
+}
+
+const formatValue = value => {
+  return value ? { label: value, value } : '';
 }
 
 class SelectInput extends Component {
   constructor(props) {
     super(props);
 
-    const { multi, options=[] } = this.props;
+    const { multi, options=[], value } = this.props;
     
     this.state = {
       multi,
-      value     : undefined,
+      value     : formatValue(value),
       options   : (isEmpty(options) ? options : formatOptions(options)),
       multiValue: []
     }
@@ -92,7 +96,8 @@ SelectInput.propTypes = {
   label     : PropTypes.string,
   options   : PropTypes.array,
   onChange  : PropTypes.func,
-  error     : PropTypes.object
+  error     : PropTypes.object,
+  value     : PropTypes.string
 }
 
 export default SelectInput;

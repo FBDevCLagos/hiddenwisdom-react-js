@@ -42,5 +42,20 @@
 .proverb-form {
   .proverb-form-control {
     padding: 0 15px;
+
+    .btn {
+      outline: none;
+    }
+  }
+}
+
+.translation-form {
+  padding: 10px;
+  border: 1px solid $gray1;
+  border-radius: 5px;
+
+  .close-form {
+    color: $primary-color;
+    cursor: pointer;
   }
 }

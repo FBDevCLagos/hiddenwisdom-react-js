@@ -45,19 +45,15 @@ class ProverbApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
-        const minProverbTitleLength = 3;
-        if (proverb.title.length < minProverbTitleLength) {
-          reject(`Title must be at least ${minProverbTitleLength} characters.`);
+        const minProverbQuoteLength = 3;
+        if (proverb.body.length < minProverbQuoteLength) {
+          reject(`Quote must be at least ${minProverbQuoteLength} characters.`);
         }
 
         if (proverb.id) {
           const existingProverbIndex = proverbs.findIndex(a => a.id === proverb.id);
           proverbs.splice(existingProverbIndex, 1, proverb);
         } else {
-          // Just simulating creation here.
-          // The server would generate ids and watchHref's for new proverbs in a real app.
-          // Cloning so copy returned is passed by value rather than by reference.
-          // proverb.id = generateId(proverb);
           proverbs.push(proverb);
         }
 

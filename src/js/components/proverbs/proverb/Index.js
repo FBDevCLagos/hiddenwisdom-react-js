@@ -1,9 +1,9 @@
 import React, { PropTypes, Component } from 'react'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux'
 import { saveProverb, loadProverbs } from '../../../actions/proverbActions';
-import { languages } from '../../../utils/translationLanguages';
 import { isEmpty } from 'underscore';
 import ProverbForm from './ProverbForm';
+import toastr from 'toastr';
 
 class Proverb extends Component {
   constructor(props, context) {
@@ -17,40 +17,42 @@ class Proverb extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.proverb.id != nextProps.proverb.id) {
+    if (this.props.proverb.id !== nextProps.proverb.id) {
       this.setState({ proverb: Object.assign({}, nextProps.proverb) });
     }
-  }  
+  } 
+
+  redirect() {
+    this.setState({ loading: true });
+    toastr.success('Proverb Saved');
+    this.context.router.push('/proverbs');
+  } 
 
   handleSubmit(proverb) {
-    // console.log(proverb);
-    // this.props.saveProverb(proverb);
-  }
-
-  handleChange(field, value) {
-    let { proverb } = this.state;
-    proverb[field] = value;
-    return this.setState({ proverb });
+    this.setState({ loading: true });
+    this.props.saveProverb(proverb)
+    .then(() => this.redirect())
+    .catch(err => {
+      toastr.error(err);
+    });
   }
 
   render() {
     const { proverb, errors, loading } = this.state;
     return (
       <div className="panel-container about-page">
-        <h3>{`${this.props.params.proverbId ? "Edit" : "Create"} a proverb`}</h3>
+        <h3>{`${this.props.params.proverbId ? "Edit" : "Create"} A Proverb`}</h3>
         <ProverbForm
           proverb={proverb}
           loading={loading}
           errors={errors}
-          handleChange={this.handleChange}
           handleSubmit={this.handleSubmit} 
-          allLanguages={Object.values(languages)}/>
+        />
       </div>
-    )    
+    )
   }
 }
 
@@ -71,7 +73,7 @@ const getProverbValues = (proverbId, proverbs) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  let proverb = { body: '', language: "en", translation: '', tags: [], author: '' };
+  let proverb = { body: "", language: "en", translations: [] , tags: [], author: "" };
   const { proverbs } = state;
   const { proverbId } = ownProps.params;
   
