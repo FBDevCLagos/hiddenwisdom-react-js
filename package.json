@@ -23,7 +23,7 @@
     "build": "babel-node tools/build.js",
     "postbuild": "babel-node tools/distServer.js"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "babel-runtime": "6.6.1",
