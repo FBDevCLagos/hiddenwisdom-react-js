@@ -1,5 +1,5 @@
 <p align="center">
-  <strong style="font-size: 60px">Hidden Wisdom React</strong>
+  <strong style="font-size: 120px">Hidden Wisdom React</strong>
 </p>
 <p align="center">
     <a href="https://circleci.com/gh/lagos-devs/hiddenwisdom-react-js/tree/master">
