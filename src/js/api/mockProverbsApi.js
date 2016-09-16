@@ -35,7 +35,8 @@ class ProverbApi {
   static getProverb(proverbId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign({}, proverbWithTranslation(proverbId)));
+        const proverb = proverbs.filter(p => p.id.toString() === proverbId)
+        resolve(Object.assign({}, proverb));
       }, delay);
     });
   }
@@ -54,6 +55,7 @@ class ProverbApi {
           const existingProverbIndex = proverbs.findIndex(a => a.id === proverb.id);
           proverbs.splice(existingProverbIndex, 1, proverb);
         } else {
+          proverb.id = generateId(proverb);
           proverbs.push(proverb);
         }
 

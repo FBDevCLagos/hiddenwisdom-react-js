@@ -63,13 +63,11 @@ class ProverbForm extends Component {
     const { translations } = this.state.proverb;
     const idx = findIndex(translations, (t) => t.id === translation.id);
 
-    const updatedTranslations = [
-      ...translations.slice(0, idx),
-      translation,
-      ...translations.slice(idx + 1)
-    ];
+    const existingProverbIndex = translations.findIndex(t => t.id == translation.id);
+    
+    translations.splice(existingProverbIndex, 1, translation);
 
-    this.handleChange("translations", updatedTranslations);
+    this.handleChange("translations", translations);
   }
 
   renderQuote() {
@@ -104,8 +102,7 @@ class ProverbForm extends Component {
         label="Tags"
         hint="Enter a value that's NOT in the list, then hit enter"
         options={tags}
-        onChange={this.handleChange}
-        multi={true} />      
+        onChange={this.handleChange} />      
     );
   }
 

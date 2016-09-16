@@ -29,7 +29,7 @@ class SelectInput extends Component {
   constructor(props) {
     super(props);
 
-    const { multi, options=[], value } = this.props;
+    const { multi, options, value } = this.props;
     
     this.state = {
       multi,
@@ -87,6 +87,11 @@ class SelectInput extends Component {
       </div>     
     );
   }  
+}
+
+SelectInput.defaultProps = {
+  multi   : true,
+  options : []
 }
 
 SelectInput.propTypes = {
