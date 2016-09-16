@@ -38,24 +38,26 @@ describe('loadProverbs', function() {
   // this.timeout(15000);
   it('should dispatch a success action on successful API response', done => {
     // setup
-    const proverbs = [{id: 'A1023', name: 'first proverb'}];
+    const proverbs = [ {id: 'A1023', body: 'first proverb'} ];
 
     nock(Config.host)
-    .get('/proverbs/recent')
-    .reply(200, {body: proverbs});
+    .get('/proverbs')
+    .reply(200, { proverbs });
 
     const expectedActions = [
       {type: types.default.LOAD_PROVERBS_SUCCESS, proverbs}
     ];
 
     // action
-    const initialAppState = {tags: []};
+    const initialAppState = { proverbs: [] };
     const store = mockStore(initialAppState, expectedActions);
 
-    store.dispatch(proverbActions.loadProverbs()).then(() => {
-      const actions = store.getActions();
-      // expect(actions[0].type).toEqual(types.default.LOAD_PROVERBS_SUCCESS);
-      // expect(actions[0].proverbs).toEqual(proverbs);
+    store.dispatch(
+      proverbActions.loadProverbs())
+      .then(() => {
+        const [ actions ] = store.getActions();
+        expect(actions.type).toEqual(types.default.LOAD_PROVERBS_SUCCESS);
+        expect(actions.proverbs).toEqual(proverbs);
     });
 
     done();

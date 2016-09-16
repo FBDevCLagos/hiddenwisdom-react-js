@@ -57,7 +57,7 @@ class Proverb extends Component {
 }
 
 Proverb.contextTypes = {
-  router: PropTypes.object.isRequired
+  router: PropTypes.object
 };
 
 Proverb.propTypes = {

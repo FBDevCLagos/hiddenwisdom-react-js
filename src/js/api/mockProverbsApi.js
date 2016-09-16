@@ -12,14 +12,8 @@ function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
 
-export function proverbWithTranslation(proverbId) {
-  const proverb = Object.values(proverbs).filter(proverb => proverb.id.toString() === proverbId)[0];
-  const proverbTranslations = translations.filter(translation => translation.proverb_id.toString() === proverbId);
-  return { proverb, translations: proverbTranslations };
-}
-
 // This would be performed on the server in a real app. Just stubbing in.
-const generateId = (proverb) => {
+export const generateId = (proverb) => {
   return replaceAll(proverb.body.toLowerCase(), ' ', '-');
 };
 
@@ -68,7 +62,7 @@ class ProverbApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfProverbToDelete = proverbs.findIndex(proverb => {
-          return proverb.proverbId === proverbId;
+          return proverb.id === proverbId;
         });
         proverbs.splice(indexOfProverbToDelete, 1);
         resolve();

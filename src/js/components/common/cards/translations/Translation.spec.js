@@ -6,7 +6,7 @@ import Translation from './Translation';
 let translation = {
   id: 1,
   body: 'the body',
-  language: 'igbo'
+  language: 'Igbo'
 }
 
 /**
@@ -28,6 +28,6 @@ describe('<Translation />', () => {
   it('renders the Translation component', () => {
     expect(wrapper.find('.card-block').length).toEqual(1);
     expect(wrapper.find('.card-blockquote > p').text()).toEqual(translation.body);
-    expect(wrapper.find('cite').text().toLowerCase()).toEqual('igbo');
+    expect(wrapper.find('cite').text()).toEqual('Igbo');
   });
 });
