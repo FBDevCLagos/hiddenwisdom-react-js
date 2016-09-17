@@ -6,6 +6,12 @@
 
 This is the Frontend React based app for hidden wisdom
 
+## Setup the app
+
+1. Clone the app: `git clone https://github.com/lagos-devs/hiddenwisdom-react-js.git`
+2. Install dependences: `npm install`
+3. Ensure you have `babel-cli` on your system: `npm install -g babel-cli`
+4. Start the application: `npm start`
 
 ## Contribute
 
