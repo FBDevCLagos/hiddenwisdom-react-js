@@ -61,9 +61,10 @@ $ cd hiddenwisdom-react-js
 
 ### Install
 
-Navigate to `hiddenwisdom-react-js` directory, then run `npm install` to install Node packages
+Navigate to `hiddenwisdom-react-js` directory, then run `npm install` to install Node packages, ensure you have `babel-cli` on your system
 ```bash
 $ npm install -g webpack
+$ npm install -g babel-cli
 $ npm install
 ```
 
