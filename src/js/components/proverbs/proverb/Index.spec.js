@@ -39,23 +39,23 @@ const setUp = () => {
 }
 
 describe('<Proverb /> container', () => {
-  let ProverbFormComponent, ProverbCompnent;
+  let ProverbFormComponent, ProverbComponent;
 
   beforeEach(() => {
     const wrapper = setUp();
-    ProverbCompnent = wrapper.find(Proverb);
+    ProverbComponent = wrapper.find(Proverb);
     ProverbFormComponent = wrapper.find(ProverbForm);
   });
-
+ 
   it('should render the Proverb component', () => {
-
     // assertions
     expect(ProverbFormComponent).toBeTruthy();
   });
   
-  it('should contain a Proverb Form', () => {
-
+  it('should contain a Proverb Form component', () => {
     // assertions
     expect(ProverbFormComponent).toBeTruthy();
+    expect(ProverbFormComponent.length).toEqual(1);
+    expect(ProverbComponent.prop('proverb')).toEqual(proverbs[0])
   });
 });

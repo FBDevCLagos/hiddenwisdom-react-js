@@ -29,13 +29,18 @@ class ProverbForm extends Component {
     let { proverb } = this.state;
     proverb[field] = value;
     return this.setState({ proverb });
-  }  
+  }
+
+  generateTranslationId({ translations }) {
+    return translations.map(t => t.id)
+    .reduce((pre, cur) => Math.max(pre, cur), 0) + 1;
+  }
 
   handleAddForm(e) {
     e.preventDefault();
     let { proverb } = this.state;
     let { translations } = proverb;
-    const translation = { id: (translations.length + 1), body: "", language: "" };
+    const translation = { id: this.generateTranslationId(proverb), body: "", language: "" };
     translations = [ ...translations, translation ];
     
     proverb = Object.assign({}, proverb, { translations });
@@ -67,7 +72,7 @@ class ProverbForm extends Component {
     
     translations.splice(existingProverbIndex, 1, translation);
 
-    this.handleChange("translations", translations);
+    this.handleChange("translations", Object.assign([], translations));
   }
 
   renderQuote() {
