@@ -10,14 +10,8 @@ export default function proverbReducer(state = initialState.proverbs, action) {
     case types.LOAD_PROVERB_SUCCESS:
       return storeHelpers.updateProverb(state, action.proverb);
 
-    case types.CREATE_PROVERB_SUCCESS:
-      return Object.assign({}, state, {[action.proverb.id]: action.proverb });
-
     case types.UPDATE_PROVERB_SUCCESS:
-      return storeHelpers.updateProverb(state, action.proverb);
-
-    case types.SAVE_PROVERB_ERROR:
-      return Object.assign({}, state, action.error);      
+      return storeHelpers.updateProverb(state, action.proverb);    
 
     default:
       return state;

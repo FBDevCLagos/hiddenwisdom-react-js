@@ -1,65 +1,97 @@
 import expect from 'expect';
-import * as proverbActions from './proverbActions';
-import * as types from './actionTypes';
 import thunk from 'redux-thunk';
 import nock from 'nock';
 import configureMockStore from 'redux-mock-store';
-
+import { omit } from 'underscore';
 import Config from '../config/environment';
+import * as proverbActions from './proverbActions';
+import * as types from './actionTypes';
 
-describe('loadProverbsSuccess', () => {
-  describe('Create load Proverbs Action', () => {
-    it('should create a LOAD_PROVERBS_SUCCESS action', () => {
-      // setup
-      const proverbs = [
-        {id: 'A1023'}
-      ];
-      const expectedAction = {
-        type: types.default.LOAD_PROVERBS_SUCCESS,
-        proverbs
-      };
+const proverb = { id: 'A1023', body: 'Testing proverb' };
+const proverbs = [ proverb ]; 
 
-      // actions
-      const action = proverbActions.loadProverbsSuccess(proverbs);
+describe('Proverb actions', () => {
 
-      // assertions
-      expect(action).toEqual(expectedAction);
-    });
-  });
-});
+  it('should create a LOAD_PROVERBS_SUCCESS action', () => {
 
-const middleware = [thunk];
-const mockStore = configureMockStore(middleware);
+    const expectedAction = {
+      type: types.default.LOAD_PROVERBS_SUCCESS,
+      proverbs
+    };
 
-describe('loadProverbs', function() {
-  afterEach(() => {
-    nock.cleanAll();
-  });
-  // this.timeout(15000);
-  it('should dispatch a success action on successful API response', done => {
+    // actions
+    const action = proverbActions.loadProverbsSuccess(proverbs);
+
+    // assertions
+    expect(action).toEqual(expectedAction);
+  }); 
+
+  it('should create a UPDATE_PROVERB_SUCCESS action', () => {
     // setup
-    const proverbs = [ {id: 'A1023', body: 'first proverb'} ];
+    const expectedUpdateAction = {
+      type: types.default.UPDATE_PROVERB_SUCCESS,
+      proverb
+    };
 
-    nock(Config.host)
-    .get('/proverbs')
-    .reply(200, { proverbs });
+    // actions
+    const action = proverbActions.updateProverbSuccess(proverb);
 
-    const expectedActions = [
-      {type: types.default.LOAD_PROVERBS_SUCCESS, proverbs}
-    ];
+    // assertions
+    expect(action).toEqual(expectedUpdateAction);
+  });
 
-    // action
-    const initialAppState = { proverbs: [] };
-    const store = mockStore(initialAppState, expectedActions);
+  describe('Proverb action thunks', function() {
 
-    store.dispatch(
-      proverbActions.loadProverbs())
-      .then(() => {
-        const [ actions ] = store.getActions();
-        expect(actions.type).toEqual(types.default.LOAD_PROVERBS_SUCCESS);
-        expect(actions.proverbs).toEqual(proverbs);
+    const middleware = [thunk];
+    const mockStore = configureMockStore(middleware);
+    const initialAppState = { proverbs: [], proverb: {} };
+
+    afterEach(() => {
+      nock.cleanAll();
     });
 
-    done();
-  });
+    // this.timeout(15000);
+    describe('loadProverbs', () => {
+      it('should dispatch a success action on successful API response', done => {
+
+        nock(Config.host)
+        .get('/proverbs')
+        .reply(200, proverbs);
+
+        const expectedActions = [
+          {type: types.default.LOAD_PROVERBS_SUCCESS, proverbs}
+        ];
+
+        // action
+        const store = mockStore(initialAppState, expectedActions);
+        store.dispatch(proverbActions.loadProverbs())
+          .then(() => {
+            const [actions] = store.getActions();
+            expect(actions.type).toEqual(types.default.LOAD_PROVERBS_SUCCESS);
+          });
+
+          done();
+      }); 
+    })
+
+    describe('saveProverbs', () => {
+      it('should dispatch a success action on successful API response', done => {
+
+        const expectedActions = [
+          {type: types.default.UPDATE_PROVERB_SUCCESS, proverb}
+        ];
+        
+        // action
+        const store = mockStore(initialAppState, expectedActions);
+        const [actions] = store.getActions();
+        store.dispatch(proverbActions.saveProverb(proverb))
+          .then(() => {
+            expect(actions.type).toEqual(types.default.UPDATE_PROVERB_SUCCESS);
+          });
+          
+          done();
+      }); 
+    })    
+  });  
+
 });

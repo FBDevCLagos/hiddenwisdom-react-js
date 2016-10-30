@@ -151,7 +151,6 @@ class ProverbForm extends Component {
 ProverbForm.propTypes = {
   loading     : PropTypes.bool,
   proverb     : PropTypes.object.isRequired,
-  errors      : PropTypes.object.isRequired,
   handleSubmit: PropTypes.func
 };
 

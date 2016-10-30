@@ -12,7 +12,6 @@ class Proverb extends Component {
     const { proverb } = this.props;
     this.state = {
       proverb,
-      errors    : {},
       loading   : false 
     };
 
@@ -41,14 +40,13 @@ class Proverb extends Component {
   }
 
   render() {
-    const { proverb, errors, loading } = this.state;
+    const { proverb, loading } = this.state;
     return (
       <div className="panel-container about-page">
         <h3>{`${this.props.params.proverbId ? "Edit" : "Create"} A Proverb`}</h3>
         <ProverbForm
           proverb={proverb}
           loading={loading}
-          errors={errors}
           handleSubmit={this.handleSubmit} 
         />
       </div>
@@ -68,7 +66,11 @@ Proverb.propTypes = {
 };
 
 const getProverbValues = (proverbId, proverbs) => {
-  const proverb = Object.values(proverbs).filter(proverb => proverb.id.toString() === proverbId);
+  const proverb = Object.values(proverbs)
+  .filter(
+    proverb => proverb.id.toString() === proverbId
+  );
+
   return !isEmpty(proverb) ? proverb[0] : null;
 }
 
