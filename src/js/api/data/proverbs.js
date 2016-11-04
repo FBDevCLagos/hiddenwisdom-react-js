@@ -13,14 +13,16 @@ export const proverbs = [
       translations: [
           {
               id: 1,
+              proverbId: 1,
               body: "Ura ga-eju onye nwuru anwu afo",
-              language: "ig"
+              language: "Igbo"
 
           },
           {
-              id: 1,
+              id: 2,
+              proverbId: 1,
               body: "Eni to ku, o ma sun dada",
-              language: "yb"
+              language: "Yoruba"
 
           }
       ],
@@ -37,9 +39,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 2,
+              id: 1,
+              proverbId: 2,
               body: "Gidi gidi bụ ugwu eze.",
-              language: "ig"
+              language: "Igbo"
           }
       ],
       status: "approved"
@@ -54,9 +57,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 3,
+              id: 1,
+              proverbId: 3,
               body: "Chọọ ewu ojii ka chi dị",
-              language: "ig"
+              language: "Igbo"
           }
       ],
       status: "approved"
@@ -70,9 +74,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 4,
+              id: 1,
+              proverbId: 4,
               body: "Ihe ehi hụrụ gbalaba oso ka okuku huru na-atụ onu",
-              language: "ig"
+              language: "Igbo"
           }
       ],
       status: "approved"
@@ -88,9 +93,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 5,
+              id: 1,
+              proverbId: 5,
               body: "Ibi tí à ńlọ là ńwò, a kìí wo ibi tí a ti ṣubú",
-              language: "yb",
+              language: "Yoruba",
               literal_translation: "Focus on where you are going, not where you'd fallen"
           }
       ],
@@ -106,9 +112,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 6,
+              id: 1,
+              proverbId: 6,
               body: "Tí ẹyẹ ò bá fín ẹyẹ níràn, ojú ọrun tó ẹyẹ ẹ́ fò láì fara kanra. ",
-              language: "yb",
+              language: "Yoruba",
               literal_translation: "If a bird won't seek the ill of another, the sky is wide enough for all to fly without colliding."
           }
       ]
@@ -124,9 +131,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 7,
+              id: 1,
+              proverbId: 7,
               body: "Adániwáyè ò gbàgbé ẹnìkan; àìmàsìkò ló ńdààmú ẹ̀dá.",
-              language: "yb",
+              language: "Yoruba",
               literal_translation: "God hasn't forgotten anyone; ignorance of divine timing is what makes us fret."
           }
       ]
@@ -140,9 +148,10 @@ export const proverbs = [
       ],
       translations: [
           {
-              id: 8,
+              id: 1,
+              proverbId: 8,
               body: "Ẹni tó bá da omi síwájú á tẹ'lẹ tútù.",
-              language: "yb",
+              language: "Yoruba",
               tags: [ "love", "name", "peace" ]
           }
       ],

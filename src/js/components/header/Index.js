@@ -15,10 +15,10 @@ const Header = () => {
           </li>
           <li className="nav-item" key={2}>
             <Link className="nav-link" to="/proverbs">
-              <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
-              Edit
+              <i className="fa fa-list-alt" />
+              List
             </Link>
-          </li>                  
+          </li>                          
           <li className="nav-item" key={3}>
             <Link className="nav-link" to="/proverbs/new">
               <i className="fa fa-file-o" aria-hidden="true"></i>
