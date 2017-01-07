@@ -3,7 +3,7 @@ import webAPI from '../utils/webAPI';
 import mockProverbApi from '../api/mockProverbsApi';
 
 /**
-* @param {Object} proverbs: object
+* @param array of proverbs
 * @return {Object} containing the action type and data
 */
 export function loadProverbsSuccess(proverbs) {
@@ -11,35 +11,32 @@ export function loadProverbsSuccess(proverbs) {
 }
 
 /**
-* @param {Object} proverbs: object
-* @return {Object} containing the action type and data
-*/
-export function loadProverbSuccess(proverb) {
-  return { type: types.LOAD_PROVERB_SUCCESS, proverb };
-}
-
-/**
-* @param {Object} proverbs: key proverbs and value is an array of questions
+* @param {Object} proverb
 * @return {Object} containing the action type and proverb
 */
 export function updateProverbSuccess(proverb) {
   return { type: types.UPDATE_PROVERB_SUCCESS, proverb };
 }
 
-export function loadProverbs() {
+export function loadProverbs(locale) {
+  const defaultLocale = locale ? locale : 'en';
   return dispatch => {
-    return webAPI(`/proverbs`, 'GET', '')
+    return webAPI(`${'/' + defaultLocale + '/proverbs'}`, 'GET', '')
       .then(res => {
-        dispatch(loadProverbsSuccess(res.proverbs));
+        dispatch(loadProverbsSuccess(res));
       });
   };
 }
 
-export function loadProverb(proverbId) {
-  return dispatch => {
-    return mockProverbApi.getProverb(proverbId)
-      .then(proverb => {
-        dispatch(loadProverbSuccess(proverb));
-      });
+export function saveProverb(proverb) {
+  const type = proverb.id ? 'PUT' : 'POST';
+  const rootUrl = `/proverbs`;
+  const url = proverb.id ? `${rootUrl + '/' + proverb.id}` : rootUrl;
+
+  return (dispatch) => {
+    return webAPI(url, type, proverb)
+      .then(res => {
+        dispatch(updateProverbSuccess(res))       
+      })
   };
 }

@@ -33,8 +33,30 @@
     }
 
     .fav-buttons {
+      display: flex;
       float: right;
       margin: 0 10px;
     }
+  }
+}
+
+.proverb-form {
+  .proverb-form-control {
+    padding: 0 15px;
+
+    .btn {
+      outline: none;
+    }
+  }
+}
+
+.translation-form {
+  border: 1px solid $gray1;
+  border-radius: 5px;
+  padding: 10px;
+
+  .close-form {
+    color: $primary-color;
+    cursor: pointer;
   }
 }

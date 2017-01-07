@@ -33,11 +33,11 @@ export function requestHeaders() {
 export default function processRequest(path, method, data = {}) {
   let url = Config.host + requestPath(path, method, data);
   return fetch(url, {
-    method: method,
-    headers: requestHeaders(),
-    mode: 'cors',
-    cache: 'default',
-    body: requestBody(data, method)
+    method  : method,
+    headers : requestHeaders(),
+    mode    : 'cors',
+    cache   : 'default',
+    body    : requestBody(data, method)
   })
   .then(response => response.json())
   .catch(err => {

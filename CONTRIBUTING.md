@@ -7,7 +7,7 @@ If you find a bug or have some ideas for a feature or enhancement, please raise 
 
 ## Get started!!
 
-All PRs on zhishi are based on existing issues. Go through the issues log to find those that are open and don't have the `in progress` label. Issues that have the `in progress` are already being worked on by somebody else.
+All PRs on `hiddenwisdom-react-js` are based on existing issues. Go through the issues log to find those that are open and don't have the `in progress` label. Issues that have the `in progress` are already being worked on by somebody else.
 
 ## Found an issue ticket that interests me!
 
@@ -26,7 +26,7 @@ If you're contributing for the firs time, you should fork the repository first. 
 
 Navigate to the sugar repository, press Fork button, then
 
-    git clone  https://github.com/YOUR-NAME/hiddenwisdom-react-js.git
+    git clone https://github.com/YOUR-NAME/hiddenwisdom-react-js.git
     cd hiddenwisdom-react-js
     git remote add upstream https://github.com/lagos-devs/hiddenwisdom-react-js.git
     git fetch upstream

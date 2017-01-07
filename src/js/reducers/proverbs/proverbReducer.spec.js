@@ -22,8 +22,8 @@ describe('Proverb Reducer Test', () => {
     expect(newState).toEqual(expectedState);
   });
 
-  it("should add a new proverb when passed UPDATE_PROVERB_SUCCESS" +
-    " if proverb doesn't already exist in store", () => {
+  it('should add a new proverb when passed UPDATE_PROVERB_SUCCESS' +
+    ' if proverb doesn\'t already exist in store', () => {
     const initialState = {
       1: {id: 1},
       2: {id: 2}
@@ -34,6 +34,7 @@ describe('Proverb Reducer Test', () => {
 
     // action
     const newState = proverbReducer(initialState, action);
+
     expect(Object.keys(newState).length).toEqual(3);
     expect(newState[1].id).toEqual(1);
     expect(newState[2].id).toEqual(2);
@@ -54,4 +55,5 @@ describe('Proverb Reducer Test', () => {
     expect(Object.keys(updatedState).length).toEqual(2);
     expect(updatedState[proverb.id].labor_cost).toEqual(34);
   });
+
 });
