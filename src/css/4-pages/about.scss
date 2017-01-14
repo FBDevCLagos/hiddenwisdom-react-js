@@ -1,34 +1,59 @@
-.blockquote {
-    border-left: 10px solid rgb(2, 117, 216);
-    padding: 0.5em 10px;
-    font-size: 90%;
-    font-weight: 400;
-    font-style: italic;
-    background: #e9f5ff;
+.panel-container {
+  border-radius: 0;
+  margin: 30px 0;
+  padding: 30px;
 }
 
-.blockquote .author {
+.blockquote {
+  background: $pale-blue;
+  border-left: 10px solid $strong-blue;
+  font-size: 90%;
+  font-style: italic;
+  font-weight: 400;
+  margin: 20px 0 30px;
+  padding: 0.5em 20px;
+
+  .author {
     font-style: normal;
     font-weight: bolder;
     display: block;
+  }
+}
+
+.about {
+  color: $light-blue;
+  font-size: 5.75rem;
+  padding-left: 40px;
 }
 
 .about-page {
-    display: inline-flex;
-}
+  background-image: url("../img/calabash.png");
+  background-position: 98% 90%;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  display: inline-flex;
+  font-family: $roboto;
 
-.about-page .content {
-    font-size: 130%;
-    padding: 10px 15px;
-    text-align: justify;
-    font-weight: 300;
-    width: 100%;
+  .content {
     display: inline-block;
-}
+    font-size: 100%;
+    font-weight: 300;
+    line-height: 1.8em;
+    padding: 10px 15px;
+    z-index: 2;
 
-.about-page .content p::first-letter {
-    color: #0275d8;
-    font-size: 200%;
-    font-style: italic;
-    font-family: cursive;
+    p {
+      font-family: $open-sans;
+      font-weight: 400;
+      margin: 0 40px;
+      text-align: center;
+
+      &::first-letter {
+        color: $strong-blue;
+        font-family: $cursive;
+        font-size: 200%;
+        font-style: italic;
+      }
+    }
+  }
 }
