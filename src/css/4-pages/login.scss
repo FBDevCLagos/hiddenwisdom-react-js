@@ -1,29 +1,116 @@
 .login-box {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: absolute;
   align-items: center;
+  display: flex;
+  height: 100%;
   justify-content: center;
+  position: absolute;
+  width: 100%;
+
+  h4 {
+    font-weight: 300;
+    text-align: center;
+  }
 }
 
 .main-box {
   background: $white;
-  box-shadow: 0px 0px 3px $gray1;
-  padding: 20px;
+  box-shadow: 0 1px 3px 0 $black-alpha-2,
+              0 1px 1px 0 $black-alpha-14,
+              0 2px 1px -1px $black-alpha-12;
+  padding: 40px 60px;
 
   a {
+    border-radius: 50px;
+    border-width: 2px;
+    box-shadow: 0 4px 8px 0 $black-alpha-32;
+    font-size: 0.86rem;
+    font-weight: 400;
+    padding: 10px 20px;
+    -webkit-transition: all 0.8s; /* Safari */
+    transition: all 0.8s;
     width: 100%;
 
+    &:hover {
+      box-shadow: 0 2px 5px 0 $black-alpha-26;
+      -webkit-transition-timing-function: ease;
+      transition-timing-function: ease;
+    }
+
     ~ p {
-      width: 100%;
-      text-align: center;
       margin: 10px 0;
+      text-align: center;
+      width: 100%;
+
+      &:before {
+        border: 0;
+        border-top: 1px solid $gray1;
+        content: "";
+        display: block;
+        position: relative;
+        top: 16px;
+      }
+
+      span {
+        background: $white;
+        display: inline-block;
+        font-size: 1.262em;
+        font-weight: 300;
+        padding: 0 16px;
+        position: relative;
+      }
     }
   }
+
   input {
-    width: 100%;
-    margin: 10px 0;
     font-size: 20px;
+    margin: 10px 0;
+    width: 100%;
   }
+}
+
+.btn-default {
+  color: $black;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-duration: 4s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
 }
