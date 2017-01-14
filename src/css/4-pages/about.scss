@@ -1,17 +1,34 @@
-blockquote {
+.blockquote {
     border-left: 10px solid rgb(2, 117, 216);
     padding: 0.5em 10px;
     font-size: 90%;
     font-weight: 400;
     font-style: italic;
-    margin: 1.5em 10px;
-    background: rgb(249, 249, 249);
+    background: #e9f5ff;
 }
 
-.content {
-    font-size: 100%;
-    padding: 25px 15px;
+.blockquote .author {
+    font-style: normal;
+    font-weight: bolder;
+    display: block;
+}
+
+.about-page {
+    display: inline-flex;
+}
+
+.about-page .content {
+    font-size: 130%;
+    padding: 10px 15px;
     text-align: justify;
     font-weight: 300;
     width: 100%;
+    display: inline-block;
+}
+
+.about-page .content p::first-letter {
+    color: #0275d8;
+    font-size: 200%;
+    font-style: italic;
+    font-family: cursive;
 }

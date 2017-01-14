@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
+import { Link } from 'react-router';
 import Translations from '../translations/Translations';
 
 const ProverbCard = ({ proverb }) => {
@@ -8,6 +9,9 @@ const ProverbCard = ({ proverb }) => {
         <div className="card-header">
           <i className="fa fa-comment-o" />
           {proverb.body}
+          <Link to={`proverbs/${proverb.id}`} className="pull-xs-right">
+             <i className="fa fa-pencil-square-o pull-xs-right" />
+          </Link>
         </div>
         <Translations
           translations={proverb.translations} />

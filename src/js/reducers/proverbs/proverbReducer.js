@@ -11,7 +11,7 @@ export default function proverbReducer(state = initialState.proverbs, action) {
       return storeHelpers.updateProverb(state, action.proverb);
 
     case types.UPDATE_PROVERB_SUCCESS:
-      return storeHelpers.updateProverb(state, action.proverb);
+      return storeHelpers.updateProverb(state, action.proverb);    
 
     default:
       return state;

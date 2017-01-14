@@ -8,10 +8,10 @@ import Translations from './Translations';
 */
 function setup(status) {
   let props = {
-    translations: {
-      1: { id: 1 },
-      2: { id: 2 }
-    }
+    translations: [
+      { id: 1 },
+      { id: 2 }
+    ]
   };
   return shallow(<Translations {...props} />);
 }

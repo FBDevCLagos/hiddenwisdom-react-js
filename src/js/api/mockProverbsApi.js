@@ -1,6 +1,6 @@
 import delay from './delay';
-import {proverbs} from './data/proverbs';
-import {translations} from './data/translations';
+import { proverbs } from './data/proverbs';
+import { translations } from './data/translations';
 
 /* eslint-disable camelcase */
 
@@ -12,14 +12,8 @@ function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
 
-export function proverbWithTranslation(proverbId) {
-  let proverbArr = proverbs.filter(proverb => proverb.id === proverbId);
-  let translationsArr = translations.filter(job => job.proverb_id === proverbId);
-  return Object.assign({}, proverbArr[0], {translations: translationsArr});
-}
-
 // This would be performed on the server in a real app. Just stubbing in.
-const generateId = (proverb) => {
+export const generateId = (proverb) => {
   return replaceAll(proverb.body.toLowerCase(), ' ', '-');
 };
 
@@ -35,7 +29,8 @@ class ProverbApi {
   static getProverb(proverbId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign({}, proverbWithTranslation(proverbId)));
+        const proverb = proverbs.filter(p => p.id.toString() === proverbId)
+        resolve(Object.assign({}, proverb));
       }, delay);
     });
   }
@@ -45,19 +40,16 @@ class ProverbApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
-        const minProverbTitleLength = 3;
-        if (proverb.title.length < minProverbTitleLength) {
-          reject(`Title must be at least ${minProverbTitleLength} characters.`);
+        const minProverbQuoteLength = 3;
+        if (proverb.body.length < minProverbQuoteLength) {
+          reject(`Quote must be at least ${minProverbQuoteLength} characters.`);
         }
 
         if (proverb.id) {
           const existingProverbIndex = proverbs.findIndex(a => a.id === proverb.id);
           proverbs.splice(existingProverbIndex, 1, proverb);
         } else {
-          // Just simulating creation here.
-          // The server would generate ids and watchHref's for new proverbs in a real app.
-          // Cloning so copy returned is passed by value rather than by reference.
-          // proverb.id = generateId(proverb);
+          proverb.id = generateId(proverb);
           proverbs.push(proverb);
         }
 
@@ -70,7 +62,7 @@ class ProverbApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfProverbToDelete = proverbs.findIndex(proverb => {
-          return proverb.proverbId === proverbId;
+          return proverb.id === proverbId;
         });
         proverbs.splice(indexOfProverbToDelete, 1);
         resolve();

@@ -1,4 +1,4 @@
-const languages = {
+export const languages = {
   ig: 'Igbo',
   yb: 'Yoruba',
   hs: 'Hausa'
