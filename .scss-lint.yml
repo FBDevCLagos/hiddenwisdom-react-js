@@ -245,3 +245,12 @@ linters:
 
   Compass::*:
     enabled: false
+
+  no-vendor-prefixes:
+    - 1
+    -
+      excluded-identifiers:
+        - webkit
+        - moz
+        - o
+        - ms
