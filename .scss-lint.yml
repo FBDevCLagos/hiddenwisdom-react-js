@@ -240,12 +240,6 @@ linters:
     enabled: false
     properties: []
 
-  VendorPrefix:
-    enabled: false
-    identifier_list: base
-    additional_identifiers: []
-    excluded_identifiers: []
-
   ZeroUnit:
     enabled: true
 
