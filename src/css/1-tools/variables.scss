@@ -7,6 +7,8 @@ $roboto: "Roboto", "Lato", sans-serif;
 $base-font-size: 14px;
 $proverb-font-size: 24px;
 $line-height: 1.4;
+$cursive: cursive;
+$open-sans: "Open Sans";
 
 // colors
 $primary-color: #0275d8;
@@ -16,9 +18,20 @@ $box-fill: #FBFBFB;
 $lines: #EEEEEE;
 $site-bg: #EEEEEE;
 $white: #FFFFFF;
+$black: #000000;
 $gray1: #CCCCCC;
 $selection: #b3d4fc;
 $main-content-bg: rgba(0, 0, 0, 0.2);
+$light-blue: #96ccff;
+$strong-blue: #0275d8;
+$pale-blue: #e9f5ff;
+
+// box-shadow
+$black-alpha-12: rgba(0, 0, 0, 0.12);
+$black-alpha-14: rgba(0, 0, 0, 0.14);
+$black-alpha-2: rgba(0, 0, 0, 0.2);
+$black-alpha-26: rgba(0, 0, 0, 0.26);
+$black-alpha-32: rgba(0, 0, 0, 0.32);
 
 // sidebar
 $sidebar-bg-color: #f5f5f5;

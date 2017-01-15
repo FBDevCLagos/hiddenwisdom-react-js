@@ -7,21 +7,21 @@ const LoginPanel = ({
   onFBLogin
 }) => {
    return (
-     <div className="panel">
-       <h4>Sign up with</h4>
+     <div className="panel pulse">
+       <h4>Sign up or login with</h4>
        <hr />
        <Link
          to="/login/phone-number"
          className="btn btn-info">
          Your phone number
        </Link>
-       <p>OR</p>
+       <p><span>or</span></p>
        <Link
          to="/login/email"
-         className="btn btn-outline-primary">
+         className="btn btn-default">
          Your email address
        </Link>
-       <p>OR</p>
+       <p><span>or</span></p>
        <a
          href="#"
          className="btn btn-primary"
@@ -30,12 +30,12 @@ const LoginPanel = ({
        </a>
      </div>
    )
- }
+}
 
- LoginPanel.propTypes = {
-   onPhoneNumberLogin: PropTypes.func,
-   onEmailLogin: PropTypes.func,
-   onFBLogin: PropTypes.func
- }
+LoginPanel.propTypes = {
+  onPhoneNumberLogin: PropTypes.func,
+  onEmailLogin: PropTypes.func,
+  onFBLogin: PropTypes.func
+}
 
  export default LoginPanel;
