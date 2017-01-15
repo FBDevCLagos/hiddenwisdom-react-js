@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import isEmpty from '../../utils/isEmpty';
 import {connect} from 'react-redux';
@@ -7,7 +7,7 @@ import * as actions from '../../actions/loginActions';
 import CurrentUser from '../../auth/currentUser';
 
 
-export class Header extends Component {
+export class Header extends React.Component {
   render() {
     const { currentUser } = this.props;
     return (
@@ -53,7 +53,7 @@ export class Header extends Component {
 }
 
 Header.propTypes = {
-  // children: PropTypes.string.isRequired
+  currentUser: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state, ownProps) {

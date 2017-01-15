@@ -1,8 +1,8 @@
 import isEmpty from '../utils/isEmpty';
 
 export function buildCookiePathAndExpiryDate() {
-  var currentDate = new Date();
-  var expirationDate = new Date(
+  let currentDate = new Date();
+  let expirationDate = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth() + 3,
     currentDate.getDate(),

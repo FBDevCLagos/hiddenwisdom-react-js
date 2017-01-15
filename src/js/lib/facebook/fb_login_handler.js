@@ -1,7 +1,7 @@
 import fbLoginScript from './fb_login_script';
 import Auth from '../../auth';
 // for some reason, es6 import failed ...
-var loginActions = require('../../actions/loginActions');
+var loginActions = require('../../actions/loginActions'); //eslint-disable-line no-var
 
 class HandleFbLogin {
   constructor(store) {

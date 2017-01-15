@@ -37,14 +37,10 @@ class Login extends React.Component {
   onFBLogin() {
     if (this.connectedUser()) { return }
     let that = this;
-    FB.login(function(response) {
-      // handle the response
-      debugger;
-      console.log(response)
+    FB.login(function(response) { //eslint-disable-line no-undef
       if (response.status != 'connected') { return }
       that.props.actions.login(response.authResponse.accessToken)
           .then(browserHistory.push('/'))
-      // that.setState({canLoginWithFB: !this.state.canLoginWithFB})
     }, {scope: 'public_profile,email'});
   }
 
@@ -60,12 +56,12 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  // children: PropTypes.string.isRequired
+  fbLoginStatus: PropTypes.string.isRequired,
+  children: PropTypes.string
 }
 
 function mapStateToProps(state, ownProps) {
   return {
-    ...state.auth.fbLoginMeta,
     fbLoginStatus: CurrentUser.getFBLoginStatus()
   }
 }

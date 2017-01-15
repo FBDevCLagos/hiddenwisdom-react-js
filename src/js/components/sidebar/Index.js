@@ -49,6 +49,7 @@ export class Sidebar extends React.Component {
 }
 
 Sidebar.propTypes = {
+  currentUser: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

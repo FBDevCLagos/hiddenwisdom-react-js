@@ -1,3 +1,5 @@
+/*eslint-disable no-undef */
+
 export default function fb_login_init(loginSuccessHandler) {
   window.fbAsyncInit = function() {
     FB.init({
@@ -10,13 +12,12 @@ export default function fb_login_init(loginSuccessHandler) {
     if(!loginSuccessHandler) return;
 
     FB.getLoginStatus(function(response) {
-      console.log('the response:', response)
       loginSuccessHandler(response)
     });
   };
 
   (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
+    let js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
