@@ -1,6 +1,5 @@
 import types from './actionTypes';
 import webAPI from '../utils/webAPI';
-import mockUserApi from '../api/mockUserApi';
 
 export function loginSuccess(user) {
   return { type: types.LOGIN_USER_SUCCESS, user };
@@ -28,11 +27,4 @@ export function getFBLoginStatus() {
   };
 }
 
-export function mockLogin(payload) {
-  return dispatch => {
-    return mockUserApi.getUser(payload)
-      .then(res => {
-        dispatch(loginSuccess(res));
-      });
-  };
-}
+
