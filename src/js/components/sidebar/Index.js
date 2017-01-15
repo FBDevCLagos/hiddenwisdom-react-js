@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CurrentUser from '../../auth/currentUser';
 
-class Sidebar extends React.Component {
+export class Sidebar extends React.Component {
   render() {
     const { currentUser } = this.props;
     return (

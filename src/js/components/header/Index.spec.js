@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import Header from './Index';
+import { Header } from './Index';
 
 const setup = () => {
   return mount(<Header />)

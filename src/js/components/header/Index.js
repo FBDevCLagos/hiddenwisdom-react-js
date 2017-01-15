@@ -7,7 +7,7 @@ import * as actions from '../../actions/loginActions';
 import CurrentUser from '../../auth/currentUser';
 
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     const { currentUser } = this.props;
     return (
