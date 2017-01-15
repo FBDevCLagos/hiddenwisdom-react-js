@@ -22,11 +22,12 @@ const LoginPanel = ({
          Your email address
        </Link>
        <p>OR</p>
-       <Link
-         to="/login/facebook"
-         className="btn btn-primary">
-         facebook
-       </Link>
+       <a
+         href="#"
+         className="btn btn-primary"
+         onClick={onFBLogin} >
+         Facebook
+       </a>
      </div>
    )
  }

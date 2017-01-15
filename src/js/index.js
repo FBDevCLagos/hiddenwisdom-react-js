@@ -8,14 +8,14 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../css/main.scss';
 import 'font-awesome/css/font-awesome.css'
 import configureStore from './store/configureStore';
-import { loadData } from './utils/appInit';
+import appInit from './utils/appInit';
 
 let store = configureStore();
-loadData(store);
+appInit(store);
 
-render (
+render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <Router history={browserHistory} routes={routes}/>
   </Provider>,
   document.getElementById('app')
 );

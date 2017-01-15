@@ -1,6 +1,7 @@
 import Config from '../config/environment.js';
 import fetch from 'isomorphic-fetch';
 import 'babel-polyfill';
+import Auth from '../auth';
 
 const requestPath = (path, method, data = {}) => {
   if (method === 'GET' && data.length > 0) {
@@ -19,7 +20,8 @@ const requestBody = (data, method) => {
 */
 export function requestHeaders() {
   return new Headers({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': 'Token token=' + Auth.getUserToken()
   });
 }
 
