@@ -17,7 +17,7 @@ export class Header extends React.Component {
           <ul className="nav navbar-nav pull-xs-right right-nav">
             <li className="nav-item" key={1}>
               <Link className="nav-link" to="/proverbs/favorites">
-                <i className="fa fa-star" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true" />
                 Favorites
               </Link>
             </li>
@@ -29,19 +29,19 @@ export class Header extends React.Component {
             </li>
             {!isEmpty(currentUser) && <li className="nav-item" key={3}>
               <Link className="nav-link" to="/proverbs/new">
-                <i className="fa fa-file-o" aria-hidden="true"></i>
+                <i className="fa fa-file-o" aria-hidden="true" />
                 Add
               </Link>
             </li>}
             {!isEmpty(currentUser) && <li className="nav-item" key={4}>
               <Link className="nav-link" to="/logout">
-                <i className="fa fa-file-o" aria-hidden="true"></i>
+                <i className="fa fa-file-o" aria-hidden="true" />
                 Logout
               </Link>
             </li>}
             {isEmpty(currentUser) && <li className="nav-item" key={5}>
               <Link className="nav-link" to="/login">
-                <i className="fa fa-file-o" aria-hidden="true"></i>
+                <i className="fa fa-file-o" aria-hidden="true" />
                 Login
               </Link>
             </li>}
