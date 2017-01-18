@@ -7,16 +7,18 @@
 .blockquote {
   background: $pale-blue;
   border-left: 10px solid $strong-blue;
-  font-size: 90%;
+  font-size: 1.3em;
   font-style: italic;
   font-weight: 400;
-  margin: 20px 0 30px;
+  line-height: 2em;
+  margin: 3em 0;
   padding: 0.5em 20px;
 
   .author {
     font-style: normal;
     font-weight: bolder;
     display: block;
+    margin-top: 1em;
   }
 }
 
@@ -46,7 +48,9 @@
       font-family: $open-sans;
       font-weight: 400;
       margin: 0 40px;
-      text-align: center;
+      font-size: 1.3em;
+      line-height: 2em;
+      text-align: justify;
 
       &::first-letter {
         color: $strong-blue;

@@ -1,19 +1,20 @@
 import React, { PropTypes } from 'react'; // eslint-disable-line no-unused-vars
+import text from './text';
 
 const About = () => {
-   return (
+  return (
     <div className="panel-container">
-      <h3 className="about">About</h3>
+      <h3 className="about">{text.header}</h3>
       <div className="about-page row">
         <div className="content col-8 col-md-8 offset-md-2">
-          <blockquote className="blockquote">Life can only be understood backwards; but it must be lived forwards.
-            <span className="author">- Søren Kierkegaard</span>
-          </blockquote>
-          <p>Sometimes it is necessary that we understand where we are coming from, in order to better plan where we hope to be in the future. Nigeria is blessed with rich proverbs that span the numerous tribes and ethnic groups that she can boast of. However it hurts to know that this knowledge is lacking amongst our youth. Many thanks to the introduction of civilization. What must be done? It is thus our duty to <strong>BRING BACK OUR WISDOM</strong>.</p>
-          <blockquote className="blockquote"> Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.
-            <span className="author">- Bil Keane</span>
-          </blockquote>
-          <p>When brillant minds meet, one can only imagine what the result would be. Such was the case in the past, when our ancestors controlled the affiars of their environment. They pondered on and about nature, conversed with her mother, churrnned out beatifule pieces of wisdom, in writing, but more in words. "Where have these pieces gone to?", One may ask. The answer is yet to be discovered.</p>
+          {text.quotes.map(({quote, author, desc}) => {
+            return <div>
+              <blockquote className="blockquote">{quote}
+                <span className="author">- {author}</span>
+              </blockquote>
+              <p dangerouslySetInnerHTML={{__html: desc}} />
+            </div>
+          })}
         </div>
       </div>
     </div>
