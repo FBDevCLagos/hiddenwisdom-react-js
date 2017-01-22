@@ -1,17 +1,21 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Link} from 'react-router';
 import IndexPage from './IndexPage';
 import * as actions from '../../actions/loginActions';
+import CurrentUser from '../../auth/currentUser';
+import {browserHistory} from 'react-router'
+
 
 class Login extends React.Component {
   constructor(props, context) {
     super(props);
     this.state={
       phoneNumber: '',
-      emailAddress: ''
-    }
+      emailAddress: '',
+      canLoginWithFB: false
+    };
+    this.onFBLogin = this.onFBLogin.bind(this);
   }
 
   onValueChange(event, field) {
@@ -26,8 +30,18 @@ class Login extends React.Component {
 
   }
 
-  onFBLogin() {
+  connectedUser() {
+    this.props.fbLoginStatus == 'connected'
+  }
 
+  onFBLogin() {
+    if (this.connectedUser()) { return }
+    let that = this;
+    FB.login(function(response) { //eslint-disable-line no-undef
+      if (response.status != 'connected') { return }
+      that.props.actions.login(response.authResponse.accessToken)
+          .then(browserHistory.push('/'))
+    }, {scope: 'public_profile,email'});
   }
 
   render() {
@@ -37,17 +51,18 @@ class Login extends React.Component {
         onEmailLogin={this.onEmailLogin}
         onFBLogin={this.onFBLogin}
         children={this.props.children} />
-      )
+    )
   }
 }
 
 Login.propTypes = {
-  children: PropTypes.string.isRequired
+  fbLoginStatus: PropTypes.string.isRequired,
+  children: PropTypes.string
 }
 
 function mapStateToProps(state, ownProps) {
   return {
-    currentUser: state.currentUser
+    fbLoginStatus: CurrentUser.getFBLoginStatus()
   }
 }
 

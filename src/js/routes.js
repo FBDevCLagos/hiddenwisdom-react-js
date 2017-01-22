@@ -10,6 +10,22 @@ import LoginPage from './components/login/Index';
 import FacebookLogin from './components/login/Facebook';
 import PhoneLogin from './components/login/PhoneNumber';
 import EmailLogin from './components/login/Email';
+import Auth from './auth';
+
+const logout = () => {
+  Auth.logout();
+  redirectToRoot()
+}
+
+let redirectToRoot = () => {
+  window.location = '/';
+};
+
+let redirectIfLoggedInUser = function(nextState, replaceState) {
+  if (Auth.userLoggedIn()) {
+    redirectToRoot();
+  }
+};
 
 export default (
   <Route>
@@ -28,6 +44,8 @@ export default (
 
       <Route path="about" component={AboutPage} />
       <Route path="profile" component={ProfilePage} />
+
+      <Route path="logout" onEnter={logout} />
     </Route>
   </Route>
 );
