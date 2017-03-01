@@ -29,7 +29,6 @@ export function requestHeaders() {
 * @param {String} path: eg '/questions'
 * @param {String} method: eg 'POST'
 * @param {Object} data: eg {id: 1}
-* @param {Function} callback: usually an action
 * @return {Object} fetch: to be used in views that check for success or failure
 */
 export default function processRequest(path, method, data = {}) {
